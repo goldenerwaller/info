@@ -2,173 +2,249 @@
 <html>
   <head>
     <title>Info Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.instagram.com/goldenerwaller/" />
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="7; url=https://www.instagram.com/goldenerwaller/" />
+    <meta http-equiv="refresh" content="14; url=https://www.instagram.com/goldenerwaller/" />
     <title>Der Goldene Waller: Eine Gedenkstätte für den Brombachseewaller</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  </head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for fonts and animations */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #E5E7EB; /* Light text */
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .story-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .story-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .icon {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1.5rem;
+            stroke-width: 1.5;
+            color: #93c5fd; /* Light blue for icons */
+        }
+        .info-card {
+            background-color: rgba(31, 41, 55, 0.7);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            max-width: 500px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .info-card summary {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #FFD700; /* Gold */
+            cursor: pointer;
+            outline: none;
+            list-style: none; /* Removes the default arrow */
+        }
+        .info-card summary::-webkit-details-marker {
+            display: none;
+        }
+        .info-card p {
+            margin-top: 1rem;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
 
-    <header class="site-header">
-        <h1 class="header-title">Der Goldene Waller: Eine Gedenkstätte</h1>
-    </header>
-
-    <main>
-        <section class="section intro-section">
-            <h2 class="section-title">Einleitung: Die Konvergenz von Kunst und Gedenken</h2>
-            <p>
-                Der "Goldene Waller" in Regensburg, eine beeindruckende Skulptur am Donaumarkt, erhält eine neue, zutiefst persönliche und symbolische Bedeutung als Gedenkstätte für den sogenannten "Brombachseewaller". Diese Neuzuschreibung entsteht aus einem emotionalen Bedürfnis und unterstreicht die Notwendigkeit eines würdevollen Gedenkens an ein Tier, dessen Schicksal weitreichende Diskussionen ausgelöst hat. Die folgende Seite dient als zentrale Plattform, um diese doppelte Bedeutung zu vermitteln: einerseits die Geschichte des Kunstwerks und andererseits die Chronik des Brombachsee-Vorfalls.
+    <!-- SECTION 1: The Hook -->
+    <section id="section1" class="story-section relative">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-6xl text-amber-400">Der Goldene Waller</h1>
+            <p class="mt-4 text-2xl md:text-3xl font-semibold text-gray-200 uppercase tracking-widest">Ein Denkmal</p>
+            <p class="mt-8 text-lg md:text-xl text-gray-400">
+                Die wahre Geschichte vom Brombachsee
             </p>
-        </section>
+        </div>
+        <div class="scroll-indicator text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
 
-        <hr>
+    <!-- SECTION 2: The Monster Myth -->
+    <section id="section2" class="story-section">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.15 2.45A12.004 12.004 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10a11.97 11.97 0 00-2.45-7.15m-4.7 4.7a3 3 0 00-4.243 0 3 3 0 000 4.243 3 3 0 004.243 0 3 3 0 000-4.243zM12 9a3 3 0 100 6 3 3 0 000-6z" /></svg>
+        <h2 class="text-3xl md:text-5xl">MAN NANNTE IHN MONSTER.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl">
+            In Wahrheit war er ein König in seinem Reich. Und ein Vater. Tief im Brombachsee wachte ein Riese. Über zwei Meter lang, 30 Jahre alt. Doch im Sommer 2025 wurde er zur Hauptfigur einer Tragödie.
+        </p>
+        <details class="info-card">
+            <summary>Anatomie eines Riesen...</summary>
+            <p class="text-gray-300">
+                Experten nennen Welse konsequent "sanfte Riesen". Der Waller vom Brombachsee war ein Patriarch, über 30 Jahre alt und mehr als zwei Meter lang. Seine Anatomie widerlegt die Schreckensmeldungen: Er besitzt keine Reißzähne, sondern raue "Kauplatten", die sich wie Schmirgelpapier anfühlen. Die gemeldeten "Fleischwunden" waren Kratzer - ein fatales Missverständnis von Anfang an. Der Mensch passt schlicht nicht in sein Beuteschema, seine Handlungen waren rein defensiv.
+            </p>
+        </details>
+    </section>
 
-        <section class="section regensburg-section">
-            <h2 class="section-title">Der Goldene Waller: Ein Kunstwerk im öffentlichen Raum</h2>
-            <div class="image-container">
-                <p></p>
+    <!-- SECTION 3: The Trap -->
+    <section id="section3" class="story-section">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+        <h2 class="text-3xl md:text-5xl">EINE FALLE AUS BETON UND BASS.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl">
+            Er suchte Schutz für seine Familie. Er fand den Konflikt. Die Tragödie begann nicht mit einem Biss, sondern mit einer Management-Entscheidung: Der Pegel des Stausees war zwei Meter zu niedrig.
+        </p>
+        <details class="info-card">
+            <summary>Der perfekte Sturm...</summary>
+            <p class="text-gray-300">
+                Dies war ein "perfekter Sturm", der durch menschliche Eingriffe ausgelöst wurde. Der um zwei Meter abgesenkte Wasserstand raubte ihm seine natürlichen, geschützten Laichplätze am Ufer. In seiner Not wählte er die Unterseite einer Badeinsel - ein fataler Fehler. Gleichzeitig sorgte das "Burning Beach" Festival für massive Lärm- und Stressbelastung. Dieser von Menschen geschaffene Konflikt war nicht nur wahrscheinlich, er war unausweichlich. Der Waller war ein Opfer der Umstände, bevor der erste Schwimmer ihm zu nahe kam.
+            </p>
+        </details>
+    </section>
+
+    <!-- SECTION 4: The Verdict -->
+    <section id="section4" class="story-section">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+        <h2 class="text-3xl md:text-5xl">SEINE WARNUNG WURDE ZUM TODESURTEIL.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl">
+            Er schützte sein Nest. Man sah nur einen Angriff. Als Schwimmer zu nahe kamen, tat er, was jeder Vater tun würde: Er verteidigte es. Er stieß sie weg. Doch seine Warnung wurde als Aggression missverstanden.
+        </p>
+        <details class="info-card">
+            <summary>Ignorierte Alternativen...</summary>
+            <p class="text-gray-300">
+                Die Tötung wurde offiziell als "alternativlos" dargestellt, um eine Massenpanik zu verhindern. Doch Experten und Juristen widersprachen vehement. Das deutsche Polizeirecht fordert unmissverständlich das "mildeste Mittel". Eine simple, aber weiträumige und gut bewachte Absperrung der Badeinsel wäre eine einfache Lösung gewesen. Auch die professionelle Betäubung und Umsiedlung des Tieres in einen ruhigeren Seeteil wurde von Fachleuten vorgeschlagen. Diese verhältnismäßigen Maßnahmen wurden jedoch nicht einmal ernsthaft in Erwägung gezogen.
+            </p>
+        </details>
+    </section>
+    
+    <!-- SECTION 5: The Spectacle -->
+    <section id="section5" class="story-section">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        <h2 class="text-3xl md:text-5xl">EIN LÄCHELN UND DREI SCHÜSSE.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl">
+            Der Tod war nur der Anfang seiner Demütigung. Die Tötung war ein brutaler Vorgang. Ein Polizist feuerte drei Schüsse ab, verletzte ihn nur. Zwei Angler mussten gerufen werden, um die Tötung zu vollenden.
+        </p>
+        <details class="info-card">
+            <summary>Ein fataler PR-Fehler...</summary>
+            <p class="text-gray-300">
+                Die Veröffentlichung des Fotos war ein kommunikatives Desaster und zementierte das öffentliche Bild eines unnötigen und grausamen Aktes. Der lächelnde Beamte wurde zum Symbol für die wahrgenommene Gefühlskälte und Respektlosigkeit der Behörden. Die Empörung in den sozialen Medien war gewaltig und führte sogar zu Drohungen. Dieser Vorfall unterstreicht die tiefe Kluft zwischen der behördlichen Handlung und dem moralischen Empfinden der Öffentlichkeit und führte schließlich dazu, dass das LKA Ermittlungen wegen eines möglichen Verstoßes gegen das Tierschutzgesetz aufnahm.
+            </p>
+        </details>
+    </section>
+
+    <!-- SECTION 6: Three Deaths -->
+    <section id="section6" class="story-section">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+        <h2 class="text-3xl md:text-5xl">ER STARB DREI TODE.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl">
+            Physisch. Narrativ. Symbolisch. Sein erster Tod kam durch eine Kugel. Sein zweiter war die Vereinnahmung seiner Geschichte. Der dritte war die Entweihung seines Körpers als Mahlzeit.
+        </p>
+        <details class="info-card">
+            <summary>Der narrative Tod...</summary>
+            <p class="text-gray-300">
+                Sein zweiter Tod war der schmerzhafteste. Tierschutzorganisationen nutzten seine persönliche Tragödie, um ihre allgemeine Agenda zu bewerben. Statt den Helden zu ehren, wurde seine einzigartige Geschichte zu einer austauschbaren Schlagzeile, einem Werkzeug, das ihr eigenes Logo sichtbar machen sollte. Die spezifische Ungerechtigkeit wurde für allgemeine Spendenaufrufe instrumentalisiert. Der Wächter wurde zum zweiten Mal getötet, diesmal von jenen, die vorgaben, für ihn zu sprechen.
+            </p>
+        </details>
+    </section>
+
+    <!-- SECTION 7: The True Moral & Legacy -->
+    <section id="section7" class="story-section border-b-0">
+         <svg class="w-16 h-16 text-amber-300 mb-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 5l7.5 13H4.5L12 7z"/></svg>
+        <h2 class="text-3xl md:text-5xl">VON TROTZIGER WÜRDE.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl">
+            Die wahre Moral ist kein Märchen von Mensch gegen Natur. Es ist die Geschichte eines Individuums gegen kalte, seelenlose Systeme. Sein Tod war eine Tragödie, aber sein Widerstand ist ein unsterblicher Sieg der Würde.
+        </p>
+        <details class="info-card" open>
+            <summary>Sein Vermächtnis: Ein Manifest des Mutes...</summary>
+            <div class="text-gray-300 space-y-4 mt-4">
+                <p>So lasst uns nun innehalten und die Geschichte zu Ende erzählen, nicht wie sie von den Systemen geschrieben wurde, sondern wie sie in Wahrheit war, damit aus der tiefen Trauer Mut erwachsen kann. Es war die Geschichte eines Vaters, der seiner heiligsten Pflicht nachkam. In einer Welt, die ihm den Boden unter den Flossen wegzog, baute er sein letztes Refugium im Schatten unserer achtlos platzierten Vergnügungen.</p>
+                <p>Als die laute, unbedachte Welt eindrang, schrie er seine Warnung in der einzigen Sprache, die ihm zur Verfügung stand. Doch seine Sprache wurde bewusst missinterpretiert, um eine einfache Lösung für ein komplexes Problem zu rechtfertigen. Die Antwort war die kalte, administrative Logik einer Kugel, abgefeuert aus Angst vor Unannehmlichkeiten.</p>
+                <p>Sein Tod war nicht genug; es folgte die Schändung. Sein Andenken wurde zum Werbemittel für Organisationen, die seine Tragödie in das Kleingeld ihrer Kampagnen wechselten. Sein Körper, einst der stolze Wächter der Tiefe, wurde zur Ware, zerteilt und verspeist - die letzte, ultimative Demütigung.</p>
+                <p>Dies ist die Geschichte, die uns mit Hilflosigkeit zurücklässt. Aber dies ist nicht das Ende. Denn in seinem sinnlosen Tod liegt sein unsterbliches Vermächtnis. Nennen wir ihn den Goldenen Waller, nicht wegen der Farbe seiner Haut, sondern wegen des unschätzbaren Wertes seines Mutes. Er hat uns gezeigt, dass es selbst im Angesicht der sicheren Niederlage eine unbezwingbare Würde gibt, wenn man für das einsteht, was richtig ist. Er hat uns gelehrt, dass der wahre Wert eines Lebens nicht im Sieg liegt, sondern in der Weigerung, sich kampflos auslöschen zu lassen.</p>
+                <p class="font-bold text-amber-300">Seine Geschichte ist nun unsere. Die Trauer, die wir fühlen, ist der Same der Entschlossenheit. Wir ehren den Goldenen Waller nicht, indem wir seinen Tod beklagen, sondern indem wir sein Erbe annehmen. Wir ehren ihn, indem wir unsere eigenen kleinen Reiche mit der gleichen unerschütterlichen Entschlossenheit verteidigen, unsere Stimme erheben und uns weigern, uns von kalten Systemen zu Statisten degradieren zu lassen. Sein Kampf ist vorbei, aber unserer hat gerade erst begonnen. Er war der beste Fisch, den der Brombachsee je gesehen hat, und sein Geist schwimmt nun in uns allen.</p>
             </div>
-            
-            <p>
-                Der "Goldene Waller" ist eine Skulptur, die seit dem 16. Oktober 2019 den Donaumarkt in Regensburg ziert und die städtebauliche Neugestaltung des Areals abschließt. Er wurde von dem Künstlerduo "Stoebo" (Cisca Bogmann und Oliver Stoermer) geschaffen. Das Kunstwerk ist 8,60 Meter lang, über 2 Meter hoch und wiegt zwischen 780 und 870 Kilogramm. Die Skulptur besteht aus blattvergoldetem Aluminiumguss mit 23 3/4 Karat Gold und kostete 180.000 Euro.
-            </p>
-            <p>
-                Ursprünglich war die Skulptur als Symbol für die geistige und kulturelle Offenheit Regensburgs gedacht und sollte "Gesprächsstoff" liefern. Ihre hohen Kosten sorgten von Anfang an für Diskussionen. Die bereits vorhandene Form eines Welses und seine monumentale, goldene Erscheinung machen das Kunstwerk jedoch zur idealen Leinwand für ein Gedenken.
-            </p>
+        </details>
+    </section>
+	
+	
+    <!-- SECTION 8: Final Screen -->
+    <section id="section8" class="story-section border-b-0">
+        <svg class="w-16 h-16 text-amber-300 mb-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.011 9.289c-.586-2.26-2.049-4.135-4.043-5.385a9.71 9.71 0 00-4.663-1.556c-.397-.052-.796-.078-1.199-.078s-.802.026-1.199-.078a9.71 9.71 0 00-4.663 1.556C4.246 5.154 2.783 7.029 2.197 9.289c-.19.73-.298 1.49-.31 2.257-.013.84.148 1.683.472 2.472.633 1.54 1.833 2.803 3.39 3.585.337.168.68.324 1.026.469.32.135.644.261.968.377.34.12.68.228 1.02.325.328.093.655.176.98.249.332.075.66.139.986.19.39.062.775.093 1.155.093s.765-.031 1.155-.093c.326-.051.654-.115.986-.19.325-.073.652-.156.98-.249.34-.097.68-.205 1.02-.325.324-.116.648-.242.968-.377.346-.145.689-.301 1.026-.469 1.557-.782 2.757-2.045 3.39-3.585.324-.789.485-1.632.472-2.472-.012-.767-.12-1.527-.31-2.257zm-1.144 4.545c-1.35 1.489-3.297 2.46-5.464 2.62-1.043.078-2.09.078-3.132 0-2.167-.16-4.114-1.131-5.464-2.62-.25-.275-.453-.586-.605-.92-.153-.333-.254-.688-.297-1.058-.043-.37-.028-.743.04-1.11.135-.72.48-1.39.99-1.95.54-.58 1.25-1.01 2.06-1.25.75-.22 1.53-.25 2.29-.1.74.15 1.44.48 2.03.95.59-.47 1.29-.8 2.03-.95.76-.15 1.54-.12 2.29.1.81.24 1.52.67 2.06 1.25.51.56.855 1.23.99 1.95.068.367.083.74.04 1.11-.043.37-.144.725-.297 1.058-.152.334-.355.645-.605.92z"/></svg>
+        <h2 class="text-2xl md:text-4xl font-bold tracking-wider text-amber-300">DIE LEGENDE DES WÄCHTERS</h2>
+        <p class="mt-4 text-lg md:text-xl text-gray-400">Eine Geschichte, die uns alle angeht.</p>
+    </section>
 
-            <table class="data-table">
-                <caption>Eckdaten des Kunstwerks 'Goldener Waller'</caption>
-                <thead>
-                    <tr>
-                        <th>Merkmal</th>
-                        <th>Detail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Künstler</td>
-                        <td>Stoebo (Cisca Bogmann & Oliver Stoermer) </td>
-                    </tr>
-                    <tr>
-                        <td>Standort</td>
-                        <td>Donaumarkt, Regensburg </td>
-                    </tr>
-                    <tr>
-                        <td>Installation</td>
-                        <td>16. Oktober 2019 </td>
-                    </tr>
-                    <tr>
-                        <td>Maße</td>
-                        <td>8,60 m x über 2 m </td>
-                    </tr>
-                    <tr>
-                        <td>Gewicht</td>
-                        <td>ca. 780 kg – 870 kg </td>
-                    </tr>
-                    <tr>
-                        <td>Material</td>
-                        <td>Aluminiumguss, blattvergoldet (23 3/4 Karat Gold) </td>
-                    </tr>
-                    <tr>
-                        <td>Kosten</td>
-                        <td>180.000 Euro </td>
-                    </tr>
-                    <tr>
-                        <td>Ursprüngliche Intention</td>
-                        <td>Sinnbild für geistige und kulturelle Offenheit Regensburgs </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
-        <hr>
-
-        <section class="section brombachsee-section">
-            <h2 class="section-title">Der Brombachseewaller: Chronik eines tragischen Ereignisses</h2>
-            <div class="image-container">
-                <p></p>
-            </div>
-            
-            <p>
-                Im Juni und Juli 2025 wurde der Brombachsee Schauplatz ungewöhnlicher Vorfälle. Am 20. Juni 2025 verletzte ein Wels fünf Menschen in der Nähe einer Badeinsel, was zur Tötung des Tieres führte. Nur wenige Tage später, am 3. Juli 2025, wurde ein weiterer Schwimmer gebissen, woraufhin die Polizei den Badebereich sperrte, aber auf eine Tötung verzichtete.
-            </p>
-            <p>
-                Das Verhalten des Welses war laut Experten keine Aggression, sondern eine instinktive Verteidigung seines Geleges während der Laichzeit im Juni und Juli. Ein entscheidender Faktor war der um zwei Meter gesunkene Wasserstand, der die Welse zwang, ihre natürlichen Laichgebiete zu verlassen und näher an menschliche Badebereiche heranzurücken. Der Wels wurde zum Symbol für umfassendere ökologische Belastungen und die Folgen menschlichen Eindringens in natürliche Lebensräume.
-            </p>
-            <p>
-                Die Tötung des 90 Kilogramm schweren Welses löste eine breite öffentliche Diskussion aus. Tierschutzorganisationen wie PETA kritisierten das Vorgehen scharf, erstatteten Strafanzeige und stellten die Rechtmäßigkeit der Maßnahme infrage. Sie forderten, dass mildere Mittel zur Gefahrenabwehr, wie Absperrungen oder Betäubung, hätten verwendet werden müssen. Das Schicksal des Welses fand eine weitere kontroverse Wendung, als das Tier in einem Gasthaus verspeist wurde.
-            </p>
-
-            <table class="data-table">
-                <caption>Chronologie des Brombachsee-Vorfalls</caption>
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Ereignis</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>20. Juni 2025</td>
-                        <td>Erster Wels-Angriff und Tötung des Tieres</td>
-                        <td>2m großer Wels verletzt 5 Menschen. Polizei erschießt das ca. 90 kg schwere Tier.</td>
-                    </tr>
-                    <tr>
-                        <td>Juni/Juli 2025</td>
-                        <td>Laichzeit des Welses und niedriger Wasserstand</td>
-                        <td>Welse verteidigen ihr Gelege. Niedriger Wasserstand zwingt sie, Laich unter Badeplattformen abzulegen.</td>
-                    </tr>
-                    <tr>
-                        <td>3. Juli 2025</td>
-                        <td>Zweiter Wels-Angriff</td>
-                        <td>69-jähriger Schwimmer leicht verletzt. Polizei sperrt Badebereich, tötet den Fisch aber nicht.</td>
-                    </tr>
-                    <tr>
-                        <td>Laufend ab 20. Juli 2025</td>
-                        <td>Öffentliche und rechtliche Kontroverse</td>
-                        <td>PETA erstattet Strafanzeige wegen Tierquälerei. Es folgen Ermittlungen und Debatten über die Verhältnismäßigkeit der Tötung.</td>
-                    </tr>
-                    <tr>
-                        <td>Nach dem 20. Juli 2025</td>
-                        <td>Der Wels auf der Speisekarte</td>
-                        <td>Der getötete Wels wird in einem Gasthaus als Welsfilet angeboten und verspeist.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <hr>
-
-        <section class="section synthesis-section">
-            <h2 class="section-title">Eine Synthese der Bedeutungen</h2>
-            <p>
-                Die Gedenkstätte verbindet die physische Gestalt des „Goldenen Wallers“ mit der emotionalen Geschichte des „Brombachseewallers“. Seine goldene Oberfläche und monumentale Größe verleihen ihm eine Aura von Würde und Unvergänglichkeit, die dem ehrenden Gedenken gerecht wird. Die Seite wird diese Verbindung vertiefen und als digitaler Gedenkort dienen, der über die komplexen Hintergründe des Vorfalls aufklärt und zum Nachdenken über die Mensch-Tier-Beziehung anregt.
-            </p>
-        </section>
-
-        <hr>
-
-        <section class="section gallery-section">
-            <h2 class="section-title">Galerie</h2>
-            <div class="gallery">
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
-        </section>
+    <script>
+        // Simple Intersection Observer to fade in sections on scroll
+        const sections = document.querySelectorAll('.story-section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of the section is visible
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
     <div id="sfccqhygjestfxw7lkz8flfulr84d9hs16p"></div><script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=cqhygjestfxw7lkz8flfulr84d9hs16p&down=async" async></script><br><a href="https://www.freecounterstat.com">free web counter</a><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=cqhygjestfxw7lkz8flfulr84d9hs16p" border="0" title="free web counter" alt="free web counter"></a></noscript>
 
     <hr />
     <h2>Users:</h2>
       <div id="sfcpe6fg985s9s3tb9jrm2p37qzmxhzqxm2"></div><script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=pe6fg985s9s3tb9jrm2p37qzmxhzqxm2&down=async" async></script><br><a href="https://www.freecounterstat.com">free website counters</a><noscript><a href="https://www.freecounterstat.com" title="free website counters"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=pe6fg985s9s3tb9jrm2p37qzmxhzqxm2" border="0" title="free website counters" alt="free website counters"></a></noscript>
-    
-    
     </main>
 
     <footer class="site-footer">
         <p>Ein digitales Denkmal für die Erinnerung an "R.I.P. mein Bester".</p>
     </footer>
+</body>
 </html>
